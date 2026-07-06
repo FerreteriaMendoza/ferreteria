@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ferretería Mendoza – Materiales de Construcción</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --accent: #D85A30;
+    --accent-dark: #B8461F;
+    --accent-light: #FBEDE7;
+    --yellow: #FFDF2B;
+    --yellow-dark: #E0BE00;
+    --blue: #1F3A5F;
+    --blue-dark: #14253C;
+    --blue-light: #EAF0F6;
+    --charcoal: #232320;
+    --steel: #5C5C56;
+    --mid: #84847C;
+    --light: #F6F4EF;
+    --cream: #FBFAF7;
+    --white: #FFFFFF;
+    --border: #E5E2DA;
+    --radius: 8px;
+    --font-display: 'Oswald', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--charcoal);
+    line-height: 1.7;
+    font-size: 16px;
+  }
+
+  /* NAV */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    height: 68px;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 1px 0 rgba(31,58,95,0.03);
+  }
+
+  .nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+  }
+
+  .nav-logo img {
+    height: 42px;
+    width: auto;
+    display: block;
+  }
+
+  .nav-logo-text {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--steel);
+  }
+
+  .nav-logo-text strong {
+    color: var(--charcoal);
+    font-weight: 600;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  nav ul a {
+    color: var(--steel);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--accent); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: var(--white) !important;
+    padding: 8px 18px;
+    border-radius: var(--radius);
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--accent-dark) !important; color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(180deg, var(--blue-light) 0%, var(--cream) 55%);
+    color: var(--charcoal);
+    min-height: 88vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 0 5vw;
+    gap: 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 520px;
+    height: 520px;
+    border: 80px solid rgba(216,90,48,0.08);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: 120px;
+    bottom: -100px;
+    width: 300px;
+    height: 300px;
+    border: 50px solid rgba(31,58,95,0.06);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 2px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-title span { color: var(--accent); }
+
+  .hero-subtitle {
+    color: var(--steel);
+    font-size: 1.05rem;
+    max-width: 440px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent);
+    color: var(--white);
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.15s;
+  }
+
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--white);
+    color: var(--blue);
+    padding: 14px 28px;
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .btn-secondary:hover { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    align-self: end;
+    position: relative;
+    z-index: 1;
+  }
+
+  .stat-box {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: block;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: var(--steel);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* BRANDS TICKER */
+  .brands-bar {
+    background: var(--light);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    overflow: hidden;
+  }
+
+  .brands-inner {
+    display: flex;
+    gap: 2.5rem;
+    white-space: nowrap;
+    animation: ticker 22s linear infinite;
+    width: max-content;
+  }
+
+  .brands-inner:hover { animation-play-state: paused; }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .brand-tag {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .brand-tag::before {
+    content: '▸';
+    color: var(--accent);
+    font-size: 0.6rem;
+  }
+
+  /* SECTION */
+  section { padding: 5rem 5vw; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-intro {
+    color: var(--mid);
+    max-width: 520px;
+    font-size: 1rem;
+  }
+
+  /* SERVICIOS */
+  .servicios { background: var(--white); }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5px;
+    background: var(--border);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .serv-card {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+    transition: background 0.2s;
+  }
+
+  .serv-card:hover { background: var(--light); }
+
+  .serv-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--accent-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .serv-icon svg { width: 22px; height: 22px; fill: var(--accent); }
+
+  .serv-title {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .serv-desc { font-size: 0.9rem; color: var(--mid); }
+
+  /* GALERÍA */
+  .galeria { background: var(--cream); }
+
+  .galeria-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .galeria-header .section-intro { max-width: 560px; }
+
+  .galeria-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.85fr;
+    gap: 1.25rem;
+  }
+
+  .galeria-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    min-height: 280px;
+    background: var(--blue-dark);
+    border: 1.5px solid var(--border);
+    box-shadow: 0 18px 45px rgba(31,58,95,0.10);
+  }
+
+  .galeria-card img {
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s ease;
+  }
+
+  .galeria-card:hover img { transform: scale(1.045); }
+
+  .galeria-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(20,37,60,0.05) 20%, rgba(20,37,60,0.84) 100%);
+    pointer-events: none;
+  }
+
+  .galeria-info {
+    position: absolute;
+    left: 1.4rem;
+    right: 1.4rem;
+    bottom: 1.35rem;
+    z-index: 1;
+    color: var(--white);
+  }
+
+  .galeria-tag {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--white);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 0.65rem;
+  }
+
+  .galeria-title {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+
+  .galeria-text {
+    color: rgba(255,255,255,0.84);
+    font-size: 0.9rem;
+    max-width: 520px;
+  }
+
+  .galeria-stack {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .galeria-stack .galeria-card {
+    min-height: 210px;
+  }
+
+  .galeria-cta {
+    margin-top: 2rem;
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+    box-shadow: 0 10px 25px rgba(31,58,95,0.06);
+  }
+
+  .galeria-cta strong {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  .galeria-cta span {
+    display: block;
+    color: var(--mid);
+    font-size: 0.9rem;
+    margin-top: 0.15rem;
+  }
+
+
+  /* MATERIALES */
+  .materiales { background: var(--blue-dark); color: var(--white); }
+
+  .materiales .section-title { color: var(--white); }
+  .materiales .section-intro { color: #B8C2CC; }
+  .materiales .section-label { color: var(--accent); }
+
+  .materiales-accordion {
+    margin-top: 3rem;
+    display: grid;
+    gap: 0.9rem;
+    max-width: 900px;
+  }
+
+  .material-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .material-item.active {
+    background: rgba(255,255,255,0.075);
+    border-color: rgba(216,90,48,0.45);
+  }
+
+  .material-trigger {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #E4E8EC;
+    padding: 1.25rem 1.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-body);
+  }
+
+  .material-name-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .mat-dot {
+    width: 9px;
+    height: 9px;
+    background: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 6px rgba(216,90,48,0.12);
+  }
+
+  .mat-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #F1F4F7;
+  }
+
+  .material-arrow {
+    color: var(--accent);
+    font-size: 1.25rem;
+    line-height: 1;
+    transition: transform 0.25s ease;
+  }
+
+  .material-item.active .material-arrow { transform: rotate(180deg); }
+
+  .material-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.25s ease;
+  }
+
+  .material-item.active .material-panel {
+    max-height: 520px;
+    opacity: 1;
+  }
+
+  .material-content {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 1.25rem;
+    padding: 0 1.35rem 1.35rem 1.35rem;
+    align-items: center;
+  }
+
+  .material-photo-box {
+    height: 145px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .material-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .material-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #B8C2CC;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .material-desc {
+    color: #C7D0D8;
+    font-size: 0.94rem;
+    max-width: 520px;
+  }
+
+  .material-desc strong {
+    display: block;
+    color: var(--white);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.35rem;
+  }
+
+  /* MARCAS */
+  .marcas { 
+    background: var(--light); 
+    overflow: hidden;
+  }
+
+  .marcas-carousel {
+    margin-top: 3rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 1rem 0;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
+  }
+
+  .marcas-track {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: max-content;
+    animation: marcas-scroll 28s linear infinite;
+  }
+
+  .marcas-carousel:hover .marcas-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marcas-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .marca-slide {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    min-width: 190px;
+    height: 112px;
+    padding: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 22px rgba(31,58,95,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .marca-slide img {
+    max-width: 150px;
+    max-height: 68px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    opacity: 1;
+    transition: transform 0.25s ease, filter 0.25s ease, opacity 0.25s ease;
+  }
+
+  .marca-slide:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 30px rgba(31,58,95,0.13);
+  }
+
+  .marca-slide:hover img {
+    filter: drop-shadow(0 6px 12px rgba(0,0,0,0.14));
+    opacity: 1;
+    transform: scale(1.06);
+  }
+
+  .plycem-logo {
+    max-width: 170px;
+    max-height: 80px;
+    object-fit: contain;
+  }
+
+  .marca-placeholder {
+    flex-direction: column;
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .marca-placeholder small {
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    color: var(--mid);
+    letter-spacing: 0;
+    margin-top: 0.2rem;
+    text-transform: none;
+  }
+
+  @media (max-width: 768px) {
+    .marca-slide {
+      min-width: 160px;
+      height: 100px;
+      padding: 1rem;
+    }
+
+    .marca-slide img {
+      max-width: 125px;
+      max-height: 58px;
+    }
+  }
+
+  /* CONTACTO */
+  .contacto { background: var(--white); }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+    align-items: start;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .contact-item:last-child { border-bottom: none; }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-light);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg { width: 18px; height: 18px; fill: var(--accent); }
+
+  .contact-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 0.25rem;
+  }
+
+  .contact-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+
+  .contact-value a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .contact-value a:hover { text-decoration: underline; }
+
+  /* MAP BOX */
+  .map-box {
+    background: var(--light);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1.5px solid var(--border);
+    box-shadow: 0 8px 24px rgba(4,43,102,0.08);
+  }
+
+  .map-frame { display: block; }
+
+  .map-footer {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+  }
+
+  .map-address {
+    font-size: 0.88rem;
+    color: var(--steel);
+    font-weight: 500;
+  }
+
+  .map-link {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .map-link:hover { text-decoration: underline; }
+
+  .horario-box {
+    background: var(--blue-dark);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .hor-item {}
+
+  .hor-day {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9FB0BF;
+    margin-bottom: 0.2rem;
+  }
+
+  .hor-time {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  /* SOCIAL */
+  .social-strip {
+    background: var(--accent);
+    padding: 2rem 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .social-text {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.01em;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--radius);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .social-btn:hover { background: rgba(255,255,255,0.25); }
+  .social-btn:hover svg { fill: var(--white); }
+
+  .social-btn svg { width: 18px; height: 18px; fill: var(--white); }
+
+  /* FOOTER */
+  footer {
+    background: var(--blue-dark);
+    color: #9DB2C9;
+    text-align: center;
+    padding: 3rem 5vw 2rem;
+    font-size: 0.85rem;
+  }
+
+  .footer-logo {
+    height: 64px;
+    width: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 980px) {
+    .servicios-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav ul { display: none; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+      padding: 4rem 5vw;
+    }
+
+    .hero-stats { grid-template-columns: 1fr 1fr; }
+
+    .contacto-grid { grid-template-columns: 1fr; }
+
+    .social-strip { flex-direction: column; text-align: center; }
+
+    .servicios-grid { grid-template-columns: 1fr; }
+  }
+
+
+  @media (max-width: 768px) {
+    .material-content {
+      grid-template-columns: 1fr;
+    }
+
+    .material-photo-box {
+      height: 180px;
+    }
+  }
+
+
+  @media (max-width: 900px) {
+    .galeria-header {
+      display: block;
+    }
+
+    .galeria-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .galeria-card,
+    .galeria-stack .galeria-card {
+      min-height: 240px;
+    }
+
+    .galeria-cta {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .galeria-card,
+    .galeria-stack .galeria-card {
+      min-height: 230px;
+    }
+
+    .galeria-info {
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+    }
+
+    .galeria-title { font-size: 1.2rem; }
+    .galeria-text { font-size: 0.85rem; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#inicio">
+    <img src="logo-icon-final.png" alt="Ferretería Mendoza">
+    <span class="nav-logo-text">Ferretería <strong>Mendoza</strong></span>
+  </a>
+  <ul>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#materiales">Materiales</a></li>
+    <li><a href="#marcas">Marcas</a></li>
+    <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div>
+    <span class="hero-eyebrow">Ferretería & Materiales de Construcción</span>
+    <h1 class="hero-title">Todo lo que<br>tu obra<br><span>necesita</span></h1>
+    <p class="hero-subtitle">Desde bloques y arena hasta herramientas profesionales — encontrá los mejores materiales y marcas para tu proyecto de construcción.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/50586266766" target="_blank" class="btn-primary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.523 5.822L.057 23.986l6.306-1.447A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.868 9.868 0 01-5.034-1.379l-.36-.214-3.742.858.893-3.635-.235-.374A9.867 9.867 0 012.118 12C2.118 6.53 6.53 2.118 12 2.118c5.47 0 9.882 4.412 9.882 9.882 0 5.47-4.412 9.882-9.882 9.882z"/></svg>
+        WhatsApp
+      </a>
+      <a href="tel:+50522703529" class="btn-secondary">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Llamar
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-box">
+      <span class="stat-num">+12</span>
+      <span class="stat-label">Marcas líderes</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">20+</span>
+      <span class="stat-label">Años de experiencia</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">6</span>
+      <span class="stat-label">Días a la semana</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-num">7:30</span>
+      <span class="stat-label">Apertura diaria</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS TICKER -->
+<div class="brands-bar">
+  <div class="brands-inner">
+    <span class="brand-tag">Holcim</span>
+    <span class="brand-tag">Intaco</span>
+    <span class="brand-tag">Amanco</span>
+    <span class="brand-tag">SUR</span>
+    <span class="brand-tag">Truper</span>
+    <span class="brand-tag">Bticino</span>
+    <span class="brand-tag">Philips</span>
+    <span class="brand-tag">Imacasa</span>
+    <span class="brand-tag">DeWalt</span>
+    <span class="brand-tag">Plycem</span>
+    <span class="brand-tag">Rocarock</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="brand-tag">Holcim</span>
+    <span class="brand-tag">Intaco</span>
+    <span class="brand-tag">Amanco</span>
+    <span class="brand-tag">SUR</span>
+    <span class="brand-tag">Truper</span>
+    <span class="brand-tag">Bticino</span>
+    <span class="brand-tag">Philips</span>
+    <span class="brand-tag">Imacasa</span>
+    <span class="brand-tag">DeWalt</span>
+    <span class="brand-tag">Plycem</span>
+    <span class="brand-tag">Rocarock</span>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section class="servicios" id="servicios">
+  <p class="section-label">¿Qué ofrecemos?</p>
+  <h2 class="section-title">Todo para tu construcción<br>en un solo lugar</h2>
+  <p class="section-intro">Contamos con una amplia variedad de productos de construcción, herramientas y materiales de las mejores marcas del mercado.</p>
+
+  <div class="servicios-grid">
+    <div class="serv-card">
+      <div class="serv-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+      </div>
+      <h3 class="serv-title">Materiales de construcción</h3>
+      <p class="serv-desc">Bloques, arena, piedrín, arenilla y madera de pino para todas las etapas de tu proyecto.</p>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">
+        <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+      </div>
+      <h3 class="serv-title">Herramientas profesionales</h3>
+      <p class="serv-desc">Herramientas manuales y eléctricas de marcas como DeWalt, Truper e Imacasa.</p>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+      </div>
+      <h3 class="serv-title">Atención 6 días a la semana</h3>
+      <p class="serv-desc">Lunes a viernes de 7:30 am a 5:00 pm. Sábados de 7:30 am a 2:00 pm.</p>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      </div>
+      <h3 class="serv-title">Ubicación conveniente</h3>
+      <p class="serv-desc">Ferretería Mendoza, Nicaragua. Fácil acceso y atención personalizada.</p>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">
+        <svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
+      </div>
+      <h3 class="serv-title">Asesoría personalizada</h3>
+      <p class="serv-desc">Nuestro equipo te ayuda a elegir los materiales correctos para cada etapa de tu obra.</p>
+    </div>
+    <div class="serv-card">
+      <div class="serv-icon">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <h3 class="serv-title">Contacto directo</h3>
+      <p class="serv-desc">Comunicate por WhatsApp, teléfono o correo. Respondemos rápido a tus consultas.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- GALERÍA -->
+<section class="galeria" id="galeria">
+  <div class="galeria-header">
+    <div>
+      <p class="section-label">Ferretería en acción</p>
+      <h2 class="section-title">Atención, productos y materiales<br>para tu construcción</h2>
+    </div>
+    <p class="section-intro">Mostramos parte del servicio y disponibilidad de Ferretería Mendoza: asesoría directa, materiales para obra y productos listos para cada proyecto.</p>
+  </div>
+
+  <div class="galeria-grid">
+    <article class="galeria-card galeria-card-main">
+      <img src="img/galeria/atencion-cliente.jpeg" alt="Atención personalizada en Ferretería Mendoza" loading="lazy">
+      <div class="galeria-info">
+        <span class="galeria-tag">Atención</span>
+        <h3 class="galeria-title">Asesoría personalizada en tienda</h3>
+        <p class="galeria-text">Te ayudamos a elegir el producto adecuado según tu necesidad, presupuesto y tipo de proyecto.</p>
+      </div>
+    </article>
+
+    <div class="galeria-stack">
+      <article class="galeria-card">
+        <img src="img/galeria/madera-pino.jpeg" alt="Madera disponible para construcción" loading="lazy">
+        <div class="galeria-info">
+          <span class="galeria-tag">Stock</span>
+          <h3 class="galeria-title">Materiales disponibles</h3>
+          <p class="galeria-text">Contamos con materiales esenciales para obra, remodelación y trabajos generales.</p>
+        </div>
+      </article>
+
+      <article class="galeria-card">
+        <img src="img/galeria/banner-materiales.jpeg" alt="Construye con los mejores materiales" loading="lazy">
+        <div class="galeria-info">
+          <span class="galeria-tag">Calidad</span>
+          <h3 class="galeria-title">Construye con confianza</h3>
+          <p class="galeria-text">Productos seleccionados para acompañarte en cada etapa de tu construcción.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="galeria-cta">
+    <div>
+      <strong>¿Necesitás cotizar materiales?</strong>
+      <span>Escribinos por WhatsApp y te orientamos con gusto.</span>
+    </div>
+    <a href="https://wa.me/50586266766" target="_blank" class="btn-primary">Cotizar por WhatsApp</a>
+  </div>
+</section>
+
+<!-- MATERIALES -->
+<section class="materiales" id="materiales">
+  <p class="section-label">Stock disponible</p>
+  <h2 class="section-title">Materiales de construcción</h2>
+  <p class="section-intro">Contamos con los materiales esenciales para cualquier tipo de obra, desde fundaciones hasta acabados.</p>
+
+  <div class="materiales-accordion">
+    <div class="material-item active">
+      <button class="material-trigger" type="button" aria-expanded="true">
+        <span class="material-name-wrap"><span class="mat-dot"></span><span class="mat-name">Madera de pino</span></span>
+        <span class="material-arrow">⌄</span>
+      </button>
+      <div class="material-panel">
+        <div class="material-content">
+          <div class="material-photo-box">
+            <img src="img/materiales/Madera.jpeg" alt="Madera de pino" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="material-photo-placeholder">Foto pendiente</div>
+          </div>
+          <p class="material-desc"><strong>Madera de pino</strong>Ideal para estructuras, techos, encofrados, acabados y proyectos generales de construcción.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="material-item">
+      <button class="material-trigger" type="button" aria-expanded="false">
+        <span class="material-name-wrap"><span class="mat-dot"></span><span class="mat-name">Bloques</span></span>
+        <span class="material-arrow">⌄</span>
+      </button>
+      <div class="material-panel">
+        <div class="material-content">
+          <div class="material-photo-box">
+            <img src="img/materiales/bloques.jpg" alt="Bloques" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="material-photo-placeholder">Foto pendiente</div>
+          </div>
+          <p class="material-desc"><strong>Bloques</strong>Utilizados para levantar paredes, divisiones y estructuras resistentes en obras residenciales y comerciales.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="material-item">
+      <button class="material-trigger" type="button" aria-expanded="false">
+        <span class="material-name-wrap"><span class="mat-dot"></span><span class="mat-name">Arena</span></span>
+        <span class="material-arrow">⌄</span>
+      </button>
+      <div class="material-panel">
+        <div class="material-content">
+          <div class="material-photo-box">
+            <img src="img/materiales/Arena.jpeg" alt="Arena" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="material-photo-placeholder">Foto pendiente</div>
+          </div>
+          <p class="material-desc"><strong>Arena</strong>Material esencial para mezclas de concreto, mortero, repellos y trabajos de acabado en construcción.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="material-item">
+      <button class="material-trigger" type="button" aria-expanded="false">
+        <span class="material-name-wrap"><span class="mat-dot"></span><span class="mat-name">Piedrín</span></span>
+        <span class="material-arrow">⌄</span>
+      </button>
+      <div class="material-panel">
+        <div class="material-content">
+          <div class="material-photo-box">
+            <img src="img/materiales/Piedrin.jpg" alt="Piedrín" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="material-photo-placeholder">Foto pendiente</div>
+          </div>
+          <p class="material-desc"><strong>Piedrín</strong>Agregado grueso usado en concreto, bases estructurales, drenajes y trabajos que requieren mayor resistencia.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="material-item">
+      <button class="material-trigger" type="button" aria-expanded="false">
+        <span class="material-name-wrap"><span class="mat-dot"></span><span class="mat-name">Arenilla</span></span>
+        <span class="material-arrow">⌄</span>
+      </button>
+      <div class="material-panel">
+        <div class="material-content">
+          <div class="material-photo-box">
+            <img src="img/materiales/arenilla.jpeg" alt="Arenilla" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="material-photo-placeholder">Foto pendiente</div>
+          </div>
+          <p class="material-desc"><strong>Arenilla</strong> Recomendada para nivelaciones, rellenos, preparación de superficies y detalles de acabado.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARCAS -->
+<section class="marcas" id="marcas">
+  <p class="section-label">Nuestras marcas</p>
+  <h2 class="section-title">Las mejores marcas<br>del mercado</h2>
+  <p class="section-intro">Distribuimos productos originales de marcas líderes en construcción, electricidad y herramientas.</p>
+
+  <div class="marcas-carousel" aria-label="Carrusel de marcas">
+    <div class="marcas-track">
+
+      <div class="marca-slide"><img src="Logos/holcim.jpeg" alt="Holcim"></div>
+      <div class="marca-slide"><img src="Logos/intaco.png" alt="INTACO"></div>
+      <div class="marca-slide"><img src="Logos/amanco-wavin.png" alt="Amanco Wavin"></div>
+      <div class="marca-slide"><img src="Logos/sur.png" alt="SUR"></div>
+      <div class="marca-slide"><img src="Logos/truper.png" alt="Truper"></div>
+      <div class="marca-slide"><img src="Logos/dewalt.png" alt="DEWALT"></div>
+      <div class="marca-slide"><img src="Logos/bticino.png" alt="BTicino"></div>
+      <div class="marca-slide"><img src="Logos/philips.png" alt="Philips"></div>
+      <div class="marca-slide"><img src="Logos/imacasa.png" alt="IMACASA"></div>
+      <div class="marca-slide"><img src="Logos/Plycem.jpg" alt="Plycem" class="plycem-logo"></div>
+      <div class="marca-slide"><img src="Logos/Rocarock.jpeg" alt="RocaRock"></div>
+      <!-- Duplicado para crear movimiento infinito -->
+
+      <div class="marca-slide"><img src="Logos/holcim.jpeg" alt="Holcim"></div>
+      <div class="marca-slide"><img src="Logos/intaco.png" alt="INTACO"></div>
+      <div class="marca-slide"><img src="Logos/amanco-wavin.png" alt="Amanco Wavin"></div>
+      <div class="marca-slide"><img src="Logos/sur.png" alt="SUR"></div>
+      <div class="marca-slide"><img src="Logos/truper.png" alt="Truper"></div>
+      <div class="marca-slide"><img src="Logos/dewalt.png" alt="DEWALT"></div>
+      <div class="marca-slide"><img src="Logos/bticino.png" alt="BTicino"></div>
+      <div class="marca-slide"><img src="Logos/philips.png" alt="Philips"></div>
+      <div class="marca-slide"><img src="Logos/imacasa.png" alt="IMACASA"></div>
+      <div class="marca-slide"><img src="Logos/Plycem.jpg" alt="Plycem" class="plycem-logo"></div>
+      <div class="marca-slide"><img src="Logos/Rocarock.jpeg" alt="RocaRock"></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL STRIP -->
+<div class="social-strip">
+  <p class="social-text">Seguinos en redes sociales</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/share/1EqtBoyUAQ/?mibextid=wwXIfr" target="_blank" class="social-btn">
+      <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Facebook
+    </a>
+    <a href="https://www.instagram.com/ferreteria_mendoza21" target="_blank" class="social-btn">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      Instagram
+    </a>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <p class="section-label">Encontranos</p>
+  <h2 class="section-title">Horario y contacto</h2>
+  <p class="section-intro">Estamos listos para atenderte. Visitanos o comunicate con nosotros directamente.</p>
+
+  <div class="contacto-grid">
+    <div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </div>
+        <div>
+          <p class="contact-label">Teléfono convencional</p>
+          <p class="contact-value"><a href="tel:+50522703529">+505 2270-3529</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z M12 0C5.373 0 0 5.373 0 12c0 2.115.554 4.1 1.523 5.822L.057 23.986l6.306-1.447A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.882a9.868 9.868 0 01-5.034-1.379l-.36-.214-3.742.858.893-3.635-.235-.374A9.867 9.867 0 012.118 12C2.118 6.53 6.53 2.118 12 2.118c5.47 0 9.882 4.412 9.882 9.882 0 5.47-4.412 9.882-9.882 9.882z"/></svg>
+        </div>
+        <div>
+          <p class="contact-label">WhatsApp</p>
+          <p class="contact-value"><a href="https://wa.me/50586266766" target="_blank">+505 8626-6766</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </div>
+        <div>
+          <p class="contact-label">Correo electrónico</p>
+          <p class="contact-value"><a href="mailto:Ferreteriamendoza.90@gmail.com">Ferreteriamendoza.90@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        </div>
+        <div>
+          <p class="contact-label">Dirección</p>
+          <p class="contact-value">Ferretería Mendoza, Nicaragua</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="map-box">
+        <iframe
+          class="map-frame"
+          src="https://www.google.com/maps?q=12.127549,-86.2448789&z=18&output=embed"
+          width="100%"
+          height="340"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de Ferretería Mendoza en Google Maps">
+        </iframe>
+        <div class="map-footer">
+          <p class="map-address">📍 Ferretería Mendoza, Nicaragua</p>
+          <a href="https://www.google.com/maps/place/Ferreteria+Mendoza/@12.127549,-86.2448789,17z/data=!3m1!4b1!4m6!3m5!1s0x8f73ff6ccf8ca437:0xa0d007b9b1b6f835!8m2!3d12.127549!4d-86.2448789!16s%2Fg%2F11pctw_qp1" target="_blank" rel="noopener" class="map-link">Cómo llegar →</a>
+        </div>
+      </div>
+
+      <div class="horario-box">
+        <div class="hor-item">
+          <p class="hor-day">Lunes – Viernes</p>
+          <p class="hor-time">7:30 am – 5:00 pm</p>
+        </div>
+        <div class="hor-item">
+          <p class="hor-day">Sábados</p>
+          <p class="hor-time">7:30 am – 2:00 pm</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="logo-completo-final.png" alt="Ferretería Mendoza – Todo para su construcción" class="footer-logo">
+  <p>© 2026 Ferretería Mendoza. Todos los derechos reservados.</p>
+  <p style="margin-top: 0.4rem;">
+    <a href="tel:+50522703529">+505 2270-3529</a> · 
+    <a href="https://wa.me/50586266766">WhatsApp</a> · 
+    <a href="mailto:Ferreteriamendoza.90@gmail.com">Correo</a>
+  </p>
+</footer>
+
+
+<script>
+  document.querySelectorAll('.material-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const currentItem = trigger.closest('.material-item');
+      const isOpen = currentItem.classList.contains('active');
+
+      document.querySelectorAll('.material-item').forEach((item) => {
+        item.classList.remove('active');
+        const btn = item.querySelector('.material-trigger');
+        if (btn) btn.setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isOpen) {
+        currentItem.classList.add('active');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
