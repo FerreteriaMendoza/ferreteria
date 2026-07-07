@@ -505,11 +505,19 @@
   .materiales .section-intro { color: #B8C2CC; }
   .materiales .section-label { color: var(--accent); }
 
+  .materiales .section-label,
+  .materiales .section-title,
+  .materiales .section-intro,
+  .materiales-accordion {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .materiales-accordion {
     margin-top: 3rem;
     display: grid;
     gap: 0.9rem;
-    max-width: 900px;
   }
 
   .material-item {
@@ -1286,7 +1294,7 @@
 <section class="marcas" id="marcas">
   <p class="section-label">Nuestras marcas</p>
   <h2 class="section-title">Las mejores marcas<br>del mercado</h2>
-  <p class="section-intro">Distribuimos productos originales de marcas líderes en construcción, electricidad y herramientas.</p>
+  <p class="section-intro">Distribuimos productos originales de marcas líderes para tu construcción.</p>
 
   <div class="marcas-carousel" aria-label="Carrusel de marcas">
     <div class="marcas-track">
