@@ -74,7 +74,7 @@
     font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: var(--steel);
+    color: var(--charcoal);
   }
 
   .nav-logo-text strong {
@@ -171,7 +171,7 @@
     margin-bottom: 1.25rem;
   }
 
-  .hero-title span { color: var(--accent); }
+  .hero-title span { color: var(--charcoal); }
 
   .hero-subtitle {
     color: var(--steel);
@@ -365,7 +365,7 @@
     margin-bottom: 0.5rem;
   }
 
-  .serv-desc { font-size: 0.9rem; color: var(--mid); }
+  .serv-desc { font-size: 0.75rem; color: var(--mid); }
 
   /* GALERÍA */
   .galeria { background: var(--cream); }
@@ -382,15 +382,25 @@
 
   .galeria-grid {
     display: grid;
-    grid-template-columns: 1.25fr 0.85fr;
     gap: 1.25rem;
+  }
+
+  .galeria-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+
+  .galeria-bottom {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .galeria-card {
     position: relative;
     overflow: hidden;
     border-radius: 16px;
-    min-height: 280px;
+    min-height: 160px;
     background: var(--blue-dark);
     border: 1.5px solid var(--border);
     box-shadow: 0 18px 45px rgba(31,58,95,0.10);
@@ -417,9 +427,9 @@
 
   .galeria-info {
     position: absolute;
-    left: 1.4rem;
-    right: 1.4rem;
-    bottom: 1.35rem;
+    left: .8rem;
+    right: .8rem;
+    bottom: .8rem;
     z-index: 1;
     color: var(--white);
   }
@@ -439,7 +449,7 @@
 
   .galeria-title {
     font-family: var(--font-display);
-    font-size: 1.35rem;
+    font-size: 1rem;
     font-weight: 500;
     line-height: 1.1;
     margin-bottom: 0.35rem;
@@ -447,17 +457,16 @@
 
   .galeria-text {
     color: rgba(255,255,255,0.84);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     max-width: 520px;
   }
 
-  .galeria-stack {
-    display: grid;
-    gap: 1.25rem;
+  .galeria-top .galeria-card {
+    min-height: 155px;
   }
 
-  .galeria-stack .galeria-card {
-    min-height: 210px;
+  .galeria-bottom .galeria-card {
+    min-height: 190px;
   }
 
   .galeria-cta {
@@ -483,7 +492,7 @@
   .galeria-cta span {
     display: block;
     color: var(--mid);
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     margin-top: 0.15rem;
   }
 
@@ -886,7 +895,7 @@
     padding: 10px 20px;
     border-radius: var(--radius);
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     text-decoration: none;
     transition: background 0.2s;
   }
@@ -906,7 +915,7 @@
   }
 
   .footer-logo {
-    height: 64px;
+    height: 150px;
     width: auto;
     margin-bottom: 1.5rem;
   }
@@ -953,13 +962,17 @@
       display: block;
     }
 
-    .galeria-grid {
+    .galeria-top {
       grid-template-columns: 1fr;
     }
 
     .galeria-card,
-    .galeria-stack .galeria-card {
-      min-height: 240px;
+    .galeria-top .galeria-card {
+      min-height: 150px;
+    }
+
+    .galeria-bottom .galeria-card {
+      min-height: 180px;
     }
 
     .galeria-cta {
@@ -970,8 +983,12 @@
 
   @media (max-width: 560px) {
     .galeria-card,
-    .galeria-stack .galeria-card {
-      min-height: 230px;
+    .galeria-top .galeria-card {
+      min-height: 145px;
+    }
+
+    .galeria-bottom .galeria-card {
+      min-height: 170px;
     }
 
     .galeria-info {
@@ -1022,9 +1039,8 @@
   </div>
 
   <div class="hero-stats">
-    <div class="stat-box">
-      <span class="stat-num">+12</span>
-      <span class="stat-label">Marcas líderes</span>
+    <div class="stat-box" style="display: flex; align-items: center; justify-content: center;">
+      <span class="stat-num" style="font-size: 1.7rem;">Marcas líderes</span>
     </div>
     <div class="stat-box">
       <span class="stat-num">+20</span>
@@ -1088,8 +1104,8 @@
       <div class="serv-icon">
         <svg viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
       </div>
-      <h3 class="serv-title">Herramientas profesionales</h3>
-      <p class="serv-desc">Herramientas manuales y eléctricas de marcas como DeWalt, Truper e Imacasa.</p>
+      <h3 class="serv-title">Herramientas de calidad</h3>
+      <p class="serv-desc">Variedad de artículos ferreteros a tu disposición.</p>
     </div>
     <div class="serv-card">
       <div class="serv-icon">
@@ -1103,14 +1119,14 @@
         <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
       </div>
       <h3 class="serv-title">Ubicación conveniente</h3>
-      <p class="serv-desc">Ferretería Mendoza, Nicaragua. Fácil acceso y atención personalizada.</p>
+      <p class="serv-desc">Ferretería Mendoza, Nicaragua. Fácil acceso y atención al cliente</p>
     </div>
     <div class="serv-card">
       <div class="serv-icon">
         <svg viewBox="0 0 24 24"><path d="M11.5 2C6.81 2 3 5.81 3 10.5S6.81 19 11.5 19h.5v3c4.86-2.34 8-7 8-11.5C20 5.81 16.19 2 11.5 2zm1 14.5h-2v-2h2v2zm0-4h-2c0-3.25 3-3 3-5 0-1.1-.9-2-2-2s-2 .9-2 2h-2c0-2.21 1.79-4 4-4s4 1.79 4 4c0 2.5-3 2.75-3 5z"/></svg>
       </div>
-      <h3 class="serv-title">Asesoría personalizada</h3>
-      <p class="serv-desc">Nuestro equipo te ayuda a elegir los materiales correctos para cada etapa de tu obra.</p>
+      <h3 class="serv-title">Atención al cliente</h3>
+      <p class="serv-desc">Nuestro equipo te acompaña en cada etapa de tu construcción.</p>
     </div>
     <div class="serv-card">
       <div class="serv-icon">
@@ -1134,16 +1150,7 @@
   </div>
 
   <div class="galeria-grid">
-    <article class="galeria-card galeria-card-main">
-      <img src="img/galeria/atencion-cliente.jpeg" alt="Atención personalizada en Ferretería Mendoza" loading="lazy">
-      <div class="galeria-info">
-        <span class="galeria-tag">Atención</span>
-        <h3 class="galeria-title">Asesoría personalizada en tienda</h3>
-        <p class="galeria-text">Te ayudamos a elegir el producto adecuado según tu necesidad, presupuesto y tipo de proyecto.</p>
-      </div>
-    </article>
-
-    <div class="galeria-stack">
+    <div class="galeria-top">
       <article class="galeria-card">
         <img src="img/galeria/madera-pino.jpeg" alt="Madera disponible para construcción" loading="lazy">
         <div class="galeria-info">
@@ -1159,6 +1166,17 @@
           <span class="galeria-tag">Calidad</span>
           <h3 class="galeria-title">Construye con confianza</h3>
           <p class="galeria-text">Productos seleccionados para acompañarte en cada etapa de tu construcción.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="galeria-bottom">
+      <article class="galeria-card galeria-card-main">
+        <img src="img/galeria/atencion-cliente.jpeg" alt="Atención personalizada en Ferretería Mendoza" loading="lazy">
+        <div class="galeria-info">
+          <span class="galeria-tag">Atención</span>
+          <h3 class="galeria-title">Asesoría personalizada en tienda</h3>
+          <p class="galeria-text">Te ayudamos a elegir el producto adecuado según tu necesidad, presupuesto y tipo de proyecto.</p>
         </div>
       </article>
     </div>
